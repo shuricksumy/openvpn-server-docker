@@ -169,12 +169,12 @@ DOCKER_COMMAND="2"
          |         [2] DH_KEY_SIZE="3072"
          |         [3] DH_KEY_SIZE="4096"
          |
-         |- TLS_SIG="1-3"
+         |- TLS_SIG="1-4"
          |    |
          |    [1] tls-crypt
          |    [2] tls-auth
          |    [3] tls-crypt-v2 [default]
-         |    
+         |    [4] no tls
          |   
          [n] [default]
              | CIPHER="AES-128-GCM"

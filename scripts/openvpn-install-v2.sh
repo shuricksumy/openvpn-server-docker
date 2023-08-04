@@ -417,7 +417,7 @@ function installQuestions() {
 		DH_TYPE="1" # ECDH
 		DH_CURVE="prime256v1"
 		HMAC_ALG="SHA256"
-		TLS_SIG="3" # tls-crypt
+		TLS_SIG="3" # tls-crypt-v2
 	else
 		echo ""
 		echo "Choose which cipher you want to use for the data channel:"
@@ -618,8 +618,9 @@ function installQuestions() {
 		echo "   1) tls-crypt (recommended)"
 		echo "   2) tls-auth"
 		echo "   3) tls-crypt-v2 (super recommended)"
-		until [[ $TLS_SIG =~ [1-3] ]]; do
-			read -rp "Control channel additional security mechanism [1-3]: " -e -i 3 TLS_SIG
+		echo "   4) no tls"
+		until [[ $TLS_SIG =~ [1-4] ]]; do
+			read -rp "Control channel additional security mechanism [1-4]: " -e -i 3 TLS_SIG
 		done
 	fi
 	echo ""
@@ -1030,7 +1031,7 @@ verb 3" >>/etc/openvpn/server.conf
 		echo "proto udp" >>/etc/openvpn/client-template.txt
 		echo "explicit-exit-notify" >>/etc/openvpn/client-template.txt
 	elif [[ $PROTOCOL == 'tcp' ]]; then
-		echo "proto tcp-client" >>/etc/openvpn/client-template.txt
+		echo "proto tcp" >>/etc/openvpn/client-template.txt
 	fi
 	echo "remote $IP $PORT
 dev tun
@@ -1262,8 +1263,10 @@ function geberateOpenVPNFile() {
 		TLS_SIG="3"
 	elif grep -qs "^tls-auth" /etc/openvpn/server.conf; then
 		TLS_SIG="2"
-	else grep -qs "^tls-crypt" /etc/openvpn/server.conf;
+	elif grep -qs "^tls-crypt" /etc/openvpn/server.conf; then
 		TLS_SIG="1"
+	else
+		TLS_SIG="0"
 	fi
 
 	# Generates the custom client.ovpn
