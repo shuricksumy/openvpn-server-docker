@@ -21,6 +21,11 @@ cd ./examples/two_servers_one_certs/
 ```
 
 ### 3.3 OpenVPN server configuration for Mikrotik routers
+Mikrotik is painful as to OpenVPN and has a lot of issues in client
+After creating Docker
+1. In server.conf file comment next row `#topology subnet`
+2. Use only TCP connection - mikrotik has fewer bugs here
+3. Set in mikrotik client config `Auth. = null`
 ```bash
 cd ./examples/mikrotik/
 ```
