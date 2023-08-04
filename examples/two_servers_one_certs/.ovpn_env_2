@@ -22,5 +22,5 @@ TLS_SIG="2" #2) tls-auth"
 # Extra parameters
 DISABLE_DEF_ROUTE_FOR_CLIENTS="y"
 CLIENT_TO_CLIENT="y"
-SET_MGMT="management 0.0.0.0 2081"
+SET_MGMT="management 172.18.0.1 2081"
 
