@@ -1,0 +1,6 @@
+[submodule "openvpn-install"]
+	path = openvpn-install
+	url = https://github.com/shuricksumy/openvpn-install.git
+[submodule "openvpn-ui"]
+	path = openvpn-ui
+	url = https://github.com/shuricksumy/openvpn-ui.git

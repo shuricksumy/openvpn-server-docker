@@ -1,0 +1,6 @@
+examples/basic/openvpn
+examples/two_servers_one_certs/openvpn
+examples/mikrotik/openvpn
+.DS_Store
+.idea
+*.log
