@@ -2,8 +2,8 @@
 
 ## 1. Build new Docker
 ```bash
-git clone LINK
-cd ./LINK
+git clone https://github.com/shuricksumy/openvpn-server-docker.git
+cd ./openvpn-server-docker
 git submodule init
 git submodule sync
 git submodule update --remote
