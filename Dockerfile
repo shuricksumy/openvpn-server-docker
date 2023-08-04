@@ -2,7 +2,7 @@
 #WORKDIR /opt
 #EXPOSE 1194
 
-FROM debian:latest
+FROM debian:stable
 
 RUN apt update && apt install -y iproute2 curl
 ADD scripts/openvpn-install-v2.sh /opt/openvpn-install-v2.sh
