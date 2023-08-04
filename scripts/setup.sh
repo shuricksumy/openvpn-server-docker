@@ -15,4 +15,4 @@ if [[ -f /etc/openvpn/set_fw.sh ]]; then
      bash /etc/openvpn/set_fw.sh
 fi
 
-/usr/sbin/openvpn --status /run/openvpn/server.status 10 --cd /etc/openvpn --config /etc/openvpn/server.conf
+/usr/sbin/openvpn  --cd /etc/openvpn --config /etc/openvpn/server.conf
