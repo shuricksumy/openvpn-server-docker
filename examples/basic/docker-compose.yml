@@ -50,4 +50,4 @@ services:
          -  /var/run/docker.sock:/var/run/docker.sock
          - ./openvpn/openvpn1:/etc/openvpn
          - ./openvpn/easy-rsa:/etc/openvpn/easy-rsa
-         - ./openvpn/openvpn1/db:/opt/openvpn-gui-tap/db
+         - ./openvpn/openvpn1/db:/opt/openvpn-gui/db
